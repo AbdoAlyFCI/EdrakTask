@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "9e91f562-5d9f-49b9-8916-3c3dbb0bf295",
+		"name": "Edrak Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28704242"
+	},
+	"item": [
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get Order",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Order",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Order with count",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerId\": \"a4ad7184-a237-4eb8-a651-190116b98cbe\",\r\n  \"orderLines\": [\r\n    {\r\n      \"productId\": \"4920e57f-5bb6-4c45-bda9-77e2336084c1\",\r\n      \"amount\": 1\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44343/api/Order",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44343",
+							"path": [
+								"api",
+								"Order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Order Status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44343/api/Order?orderId=4920e57f-5bb6-4c45-bda9-77e2336084c1&orderStatus=1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44343",
+							"path": [
+								"api",
+								"Order"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": "4920e57f-5bb6-4c45-bda9-77e2336084c1"
+								},
+								{
+									"key": "orderStatus",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44343/api/Order?orderId=4920e57f-5bb6-4c45-bda9-77e2336084c1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44343",
+							"path": [
+								"api",
+								"Order"
+							],
+							"query": [
+								{
+									"key": "orderId",
+									"value": "4920e57f-5bb6-4c45-bda9-77e2336084c1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Get Customer Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44343/api/Customer/a4ad7184-a237-4eb8-a651-190116b98cbe/orders",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44343",
+							"path": [
+								"api",
+								"Customer",
+								"a4ad7184-a237-4eb8-a651-190116b98cbe",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
